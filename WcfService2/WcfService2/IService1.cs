@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using ClassLibrary1;
 
 namespace WcfService2
 {
@@ -15,12 +14,42 @@ namespace WcfService2
     {
 
         [OperationContract]
-        string GetData(int value);
-        [OperationContract]
-        string SetGame(string title, string kind, int year);
+        void dodajGatunek(Gatunek g);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        void edytujGatunek(Gatunek g);
+
+        [OperationContract]
+        void usunGatunek(int id);
+
+        [OperationContract]
+        void dodajProducenta(Producent p);
+
+        [OperationContract]
+        void edytujProducenta(Producent p);
+
+        [OperationContract]
+        void usunProducenta(int id);
+
+        [OperationContract]
+        void dodajGre(Gry g);
+
+        [OperationContract]
+        void edytujGre(Gry g);
+
+        [OperationContract]
+        void usunGre(int id);
+
+        [OperationContract]
+        List<GryProdGatOc> wyswietlGry();
+
+        [OperationContract]
+        void dodajOcene(Oceny o);
+
+        [OperationContract]
+        void edytujOcene(Oceny o);
+
+
 
         // TODO: Add your service operations here
     }
